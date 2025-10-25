@@ -1,0 +1,14 @@
+Q.
+console.log("A");                               // sync
+setTimeout(()=> console.log("B"), 0);           // macrotask Queue
+Promise.resolve().then(()=> console.log("C"));  // microtask Queue  
+console.log("D");                               // sync
+
+output = ?
+
+Ans-> A
+      D
+      C
+      B
+
+Explanation: Understand event loop order of execution (sync -> microtasks -> macrotasks)
