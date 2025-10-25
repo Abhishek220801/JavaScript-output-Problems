@@ -1,0 +1,15 @@
+// Concepts: String manipulation, sorting, maps
+// i/p: { a: 3, b: 1, c: 2}
+// expecte o/p: aaabcc
+
+let obj = { a: 3, b: 1, c: 2};
+
+let str = "";
+
+for(let prop in obj){
+    for(let i=0; i<obj[prop]; i++){
+        str+=prop;
+    }
+}
+
+console.log(str); // aaabcc
