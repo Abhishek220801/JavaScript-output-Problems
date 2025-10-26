@@ -1,0 +1,18 @@
+
+const p = new Promise((resolve, reject) => {
+    setTimeout(()=> resolve('Here is your burger 🍔'), 5000)
+})
+
+async function getBurger(){
+    console.log('Order placed, please wait while we get your order ready!')
+    await p.then(console.log)
+}
+
+getBurger();
+
+// Output: 
+// Order placed, please wait while we get your order ready!
+// (after 5 seconds) Here is your burger 🍔
+
+// order of execution as per JS event loop
+// sync -> async (microtasks, macrotasks)
